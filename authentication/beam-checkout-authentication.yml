@@ -1,0 +1,45 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.beamcheckout.com/get-started/authentication
+docs: https://docs.beamcheckout.com/get-started/authentication
+summary:
+  types: [http]
+  http_scheme: basic
+  api_key_in: [authorization-header]
+  oauth2_flows: []
+  note: >-
+    Beam uses HTTP Basic authentication for all API keys. Credentials are the
+    base64 encoding of merchantId:apiKey sent in the Authorization header.
+    Playground and Production keys are separate and cannot be used interchangeably.
+schemes:
+  - name: MerchantApiKey
+    type: http
+    scheme: basic
+    usage: server-side requests
+    username: merchantId
+    password: merchant API key
+    base_url: https://api.beamcheckout.com/api/v1/
+    managed_in: Lighthouse dashboard (Developers section)
+    header: 'Authorization: Basic base64(merchantId:apiKey)'
+  - name: PartnerApiKey
+    type: http
+    scheme: basic
+    usage: server-side requests by partners on behalf of merchants
+    username: merchantId
+    password: partner API key
+    additional_header: 'X-Beam-Partner-ID: {partnerId}'
+    base_url: https://api.beamcheckout.com/api/v1/
+    managed_in: Bridge (Merchants > API Keys)
+  - name: PublishableKey
+    type: http
+    scheme: basic
+    usage: client-side requests to /client endpoints (e.g. card tokenization)
+    username: merchantId
+    password: publishable key
+    base_url: https://api.beamcheckout.com/client/v1/
+    note: publishable key is safe to be shared client-side
+environments:
+  - name: playground
+    base_url: https://playground.api.beamcheckout.com
+  - name: production
+    base_url: https://api.beamcheckout.com
