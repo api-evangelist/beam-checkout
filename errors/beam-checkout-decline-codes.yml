@@ -1,0 +1,36 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.beamcheckout.com/response-codes
+docs: https://docs.beamcheckout.com/response-codes
+note: >-
+  Beam surfaces card network decline data on a best-effort basis, only when the
+  underlying payment processor returns it. Codes appear on the card response
+  object. This artifact captures the fields and the documented example codes;
+  the full ISO 8583:1987 code table is the card-network standard, not enumerated
+  by Beam.
+envelope_fields:
+  iso8583ResponseCode:
+    description: Card network response code indicating the transaction result (ISO 8583:1987)
+    masked_to_buyers: false
+  merchantAdviceCode:
+    description: Alphanumeric code explaining why a transaction was declined and whether a retry is advisable
+    masked_to_buyers: false
+  networkTransactionId:
+    description: Links a Customer-Initiated Transaction (CIT) with later Merchant-Initiated Transactions (MIT)
+decline_codes:
+  - code: '00'
+    field: iso8583ResponseCode
+    meaning: Approved
+    action: none (success)
+  - code: '51'
+    field: iso8583ResponseCode
+    meaning: Insufficient funds
+    action: Do not retry with same funding source; ask buyer for another payment method
+  - code: '02'
+    field: merchantAdviceCode
+    meaning: Retry advised later
+    action: Retry the transaction after a delay
+failure_reasons:
+  - code: INSUFFICIENT_FUNDS
+    surfaced_on: charge failureCode
+    source: https://docs.beamcheckout.com/test-data

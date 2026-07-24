@@ -1,0 +1,14 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.beamcheckout.com/changelog
+versioning:
+  scheme: uri-path
+  current: v1
+  changelog_scheme: semver
+  docs: https://docs.beamcheckout.com/get-started/api-specifications
+deprecation:
+  policy_url: https://docs.beamcheckout.com/get-started/migrating-from-v0
+  note: v0 API is deprecated; a migration guide to v1 is published
+status_page: https://status.beamcheckout.com
+changelog: https://docs.beamcheckout.com/changelog
+deprecated_operations: []

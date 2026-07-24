@@ -1,27 +1,122 @@
 aid: beam-checkout
 name: Beam Checkout
-description: 'Beam Checkout is a company surfaced as a portfolio company of partech and added to the API
-  Evangelist network as a stub for enrichment. Sector: Financial Services. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  Beam is a Thailand-focused payments platform that lets businesses accept payments across in-person and
+  online channels. Its products include Beam Checkout (online payments for social media, websites, and apps
+  via hosted payment links and a Charges API), Beam Bolt (an in-person payment device), and Beam Bridge
+  (embedded payments for partner platforms). Beam supports cards, e-wallets, QR PromptPay, installments,
+  and Alipay+, with card authorization/capture, refunds, tokenization, 3DS, and CIT/MIT recurring flows.
+  The v1 REST API uses HTTP Basic auth (merchantId:apiKey), idempotency keys, HMAC-signed webhooks, and a
+  playground sandbox. Beam states it is PCI DSS compliant and compliant with Bank of Thailand regulations.
+  Backed by Peak XV, Partech, and SeaX Ventures.
 url: https://raw.githubusercontent.com/api-evangelist/beam-checkout/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - partech
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: enriched
+x-tier-reason: pipeline-enriched
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://www.beamcheckout.com/assets/beam-thumbnail.jpg
 tags:
 - Company
 - Financial Services
-apis: []
+- Payments
+- Checkout
+- Card Payments
+- Webhooks
+- Thailand
+- Fintech
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: Beam API v1
+  description: >-
+    Beam's v1 REST payments API — payment links, charges, refunds, transactions, card authorizations
+    (auth/capture/cancel), network tokenization, and Beam Bolt in-person payments.
+  humanURL: https://docs.beamcheckout.com/v1/api
+  baseURL: https://api.beamcheckout.com/api/v1/
+  properties:
+  - type: APIReference
+    url: https://docs.beamcheckout.com/v1/api
+  - type: Authentication
+    url: authentication/beam-checkout-authentication.yml
 common:
 - type: Website
   url: https://www.beamcheckout.com/
+- type: DeveloperPortal
+  url: https://docs.beamcheckout.com/
+- type: Documentation
+  url: https://docs.beamcheckout.com/
+- type: APIReference
+  url: https://docs.beamcheckout.com/v1/api
+- type: GettingStarted
+  url: https://docs.beamcheckout.com/get-started/quickstart
+- type: Authentication
+  url: authentication/beam-checkout-authentication.yml
+- type: Conventions
+  url: conventions/beam-checkout-conventions.yml
+- type: Idempotency
+  url: conventions/beam-checkout-conventions.yml
+- type: ErrorCatalog
+  url: errors/beam-checkout-problem-types.yml
+- type: DeclineCodes
+  url: errors/beam-checkout-decline-codes.yml
+- type: Lifecycle
+  url: lifecycle/beam-checkout-lifecycle.yml
+- type: StatusPage
+  url: https://status.beamcheckout.com
+- type: Deprecation
+  url: https://docs.beamcheckout.com/get-started/migrating-from-v0
+- type: ChangeLog
+  url: changelog/beam-checkout-changelog.yml
+- type: Sandbox
+  url: sandbox/beam-checkout-sandbox.yml
+- type: Conformance
+  url: conformance/beam-checkout-conformance.yml
+- type: Compliance
+  url: conformance/beam-checkout-conformance.yml
+- type: Webhooks
+  url: asyncapi/beam-checkout-webhooks.yml
+- type: MCPServer
+  url: mcp/beam-checkout-mcp.yml
+- type: LLMsTxt
+  url: llms/beam-checkout-llms.txt
+- type: DataModel
+  url: data-model/beam-checkout-data-model.yml
+- type: Postman
+  url: postman/beam-checkout-playground.postman_collection.json
+- type: DomainSecurity
+  url: security/beam-checkout-domain-security.yml
+- type: Pricing
+  url: https://www.beamcheckout.com/pricing
+- type: SignUp
+  url: https://www.beamcheckout.com/getstarted
+- type: Support
+  url: https://guides.beamcheckout.com/hc/en
+- type: TermsOfService
+  url: https://www.beamcheckout.com/tncs
+- type: PrivacyPolicy
+  url: https://www.beamcheckout.com/privacy
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

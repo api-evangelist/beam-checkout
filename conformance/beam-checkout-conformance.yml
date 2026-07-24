@@ -1,0 +1,28 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.beamcheckout.com/
+standards:
+  - id: pci-dss
+    conforms: true
+    evidence: Beam states it is PCI DSS compliant (homepage / security posture)
+  - id: bot-compliance
+    conforms: true
+    evidence: Compliant with Bank of Thailand (BOT) regulations (homepage)
+  - id: iso8583-1987
+    conforms: true
+    evidence: Card response codes use ISO 8583:1987 (response-codes reference)
+  - id: iso8601-timestamps
+    conforms: true
+    evidence: All API timestamps are ISO 8601 UTC with offset (code conventions)
+  - id: emv-3ds
+    conforms: true
+    evidence: 3D Secure authentication supported for card payments (3ds docs)
+  - id: oauth2
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: uses a custom JSON error envelope (code/message/error), not application/problem+json
+compliance_program:
+  pci_dss: true
+  bank_of_thailand: true
+  note: Compliance stated on the Beam marketing site; no public trust center or cert portal found.

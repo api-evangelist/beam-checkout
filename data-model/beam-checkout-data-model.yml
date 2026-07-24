@@ -1,0 +1,54 @@
+generated: '2026-07-18'
+method: derived
+source: >-
+  postman/beam-checkout-playground.postman_collection.json +
+  https://docs.beamcheckout.com/webhook-event-types
+note: >-
+  Beam publishes no downloadable OpenAPI file, so the entity graph is derived
+  from the first-party Postman collection paths and the webhook payload
+  references. Relationships reflect documented references, not fabricated schema.
+entities:
+  - name: PaymentLink
+    endpoint: /api/v1/payment-links
+    description: Beam-hosted checkout page a shopper pays via a URL
+  - name: Charge
+    endpoint: /api/v1/charges
+    description: A card or QR PromptPay payment
+    relationships:
+      - type: belongs_to
+        target: CardAuthorization
+        via: card authorization capture (/card-authorizations/{id}/charges)
+  - name: Refund
+    endpoint: /api/v1/refunds
+    description: Full or partial refund of a charge
+    relationships:
+      - type: belongs_to
+        target: Charge
+        via: charge reference
+  - name: Transaction
+    endpoint: /api/v1/transactions
+    description: Unified transaction record across payment methods
+  - name: CardAuthorization
+    endpoint: /api/v1/card-authorizations
+    description: A hold on funds that can later be captured or canceled
+    relationships:
+      - type: has_many
+        target: Charge
+        via: /card-authorizations/{id}/charges
+  - name: BoltConnection
+    endpoint: /api/v1/bolt-connections
+    description: Pairing between an app and a Beam Bolt in-person device
+    relationships:
+      - type: has_many
+        target: BoltIntent
+        via: bolt connection reference
+  - name: BoltIntent
+    endpoint: /api/v1/bolt-intents
+    description: An in-person payment intent on a Bolt device
+    relationships:
+      - type: belongs_to
+        target: BoltConnection
+        via: bolt connection reference
+      - type: has_one
+        target: Charge
+        via: latestChargeId

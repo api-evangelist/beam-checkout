@@ -1,0 +1,54 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.beamcheckout.com/get-started/error
+format: custom-json
+envelope:
+  shape: '{ code, message, error: { errorCode, errorMessage } }'
+  fields:
+    code: HTTP status code (integer)
+    message: general error description
+    error.errorCode: enum identifier for the specific error type
+    error.errorMessage: detailed error message
+problems:
+  - errorCode: INVALID_CREDENTIALS_ERROR
+    status: 401
+    title: Invalid credentials
+  - errorCode: NO_PERMISSION_ERROR
+    status: 403
+    title: No permission
+  - errorCode: OPERATION_NOT_ALLOWED_ERROR
+    status: 403
+    title: Operation not allowed
+  - errorCode: INVALID_JSON_ERROR
+    status: 400
+    title: Invalid JSON body
+  - errorCode: INVALID_XML_ERROR
+    status: 400
+    title: Invalid XML body
+  - errorCode: API_VALIDATION_ERROR
+    status: 400
+    title: Request validation failed
+  - errorCode: NOT_FOUND_ERROR
+    status: 404
+    title: Resource not found
+  - errorCode: REQUEST_CONFLICT_ERROR
+    status: 409
+    title: Request conflict
+  - errorCode: IDEMPOTENCY_KEY_ERROR
+    status: 412
+    title: Idempotency key error
+  - errorCode: MERCHANT_STATUS_INVALID_ERROR
+    status: 422
+    title: Merchant status invalid
+  - errorCode: CHARGE_PENDING
+    status: 422
+    title: Charge is pending
+  - errorCode: REFUND_PENDING
+    status: 422
+    title: Refund is pending
+  - errorCode: CARD_AUTHORIZATION_PENDING
+    status: 422
+    title: Card authorization is pending
+  - errorCode: TOO_MANY_REQUESTS_ERROR
+    status: 429
+    title: Too many requests (rate limited)

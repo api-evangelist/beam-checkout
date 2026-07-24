@@ -1,0 +1,44 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.beamcheckout.com/get-started/convention
+docs:
+  conventions: https://docs.beamcheckout.com/get-started/convention
+  idempotency: https://docs.beamcheckout.com/get-started/idempotency-request
+  errors: https://docs.beamcheckout.com/get-started/error
+authentication:
+  style: HTTP Basic (merchantId:apiKey), see authentication/beam-checkout-authentication.yml
+amounts:
+  format: smallest currency unit (integer, no decimals)
+  example: '10000 = 100.00 THB'
+timestamps:
+  format: ISO 8601 in UTC with timezone offset
+  example: '2025-06-05T16:08:31.240964+07:00'
+idempotency:
+  supported: true
+  header: x-beam-idempotency-key
+  applies_to: [POST, PATCH]
+  not_needed_on: [GET, DELETE, PUT]
+  key_format: V4 UUID or random string with sufficient entropy
+  max_length: 255
+  retention: 12 hours
+  behavior: >-
+    Server recognizes retries of the same request by key and will not create a
+    second object or perform the update twice. After 12 hours the same key is
+    treated as a completely new request.
+error_envelope:
+  shape: '{ code, message, error: { errorCode, errorMessage } }'
+  detail: see errors/beam-checkout-problem-types.yml
+versioning:
+  scheme: uri-path
+  current: v1
+  note: v0 is deprecated (migration guide published); changelog is semver
+  detail: see lifecycle/beam-checkout-lifecycle.yml
+webhooks:
+  signature_header: X-Beam-Signature
+  event_header: x-beam-event
+  algorithm: HMAC-SHA256
+  detail: see asyncapi/beam-checkout-webhooks.yml
+pagination:
+  documented: false
+rate_limits:
+  signal: HTTP 429 TOO_MANY_REQUESTS_ERROR (see errors/beam-checkout-problem-types.yml)

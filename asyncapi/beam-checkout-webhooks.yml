@@ -1,0 +1,51 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.beamcheckout.com/webhook-event-types
+spec_type: Webhooks
+docs:
+  overview: https://docs.beamcheckout.com/webhook-overview
+  authentication: https://docs.beamcheckout.com/webhook-authentication
+  event_types: https://docs.beamcheckout.com/webhook-event-types
+delivery:
+  transport: HTTP POST to merchant-registered endpoint
+  content_type: application/json
+  event_header: x-beam-event
+  signature_header: X-Beam-Signature
+  signature_algorithm: HMAC-SHA256
+events:
+  - name: charge.succeeded
+    description: A charge has been successfully processed
+    payload: Charge object (GET /api/v1/charges/{chargeId} schema)
+  - name: charge.failed
+    description: A charge has failed
+    payload: Charge object
+  - name: payment_link.paid
+    description: A payment link has been paid for
+    payload: Payment link object (GET /api/v1/payment-links/{id} schema)
+  - name: card_authorization.authorized
+    description: A card authorization has been authorized
+    payload: Card authorization object (GET /api/v1/card-authorizations/{id} schema)
+  - name: card_authorization.failed
+    description: A card authorization has failed
+    payload: Card authorization object
+  - name: card_authorization.canceled
+    description: A card authorization has been canceled
+    payload: Card authorization object
+  - name: refund.succeeded
+    description: A refund has been successfully processed
+    payload: Refund object (GET /api/v1/refunds/{id} schema)
+  - name: refund.failed
+    description: A refund has failed
+    payload: Refund object
+  - name: bolt_intent.paid
+    description: A bolt intent has been paid
+    payload: Bolt intent object (GET /api/v1/bolt-intents/{id} schema)
+  - name: bolt_intent.canceled
+    description: A bolt intent has been canceled
+    payload: Bolt intent object
+  - name: bolt_intent.expired
+    description: A bolt intent has expired
+    payload: Bolt intent object
+  - name: transaction.created
+    description: A transaction has been created
+    payload: Transaction object (GET /api/v1/transactions/{id} schema)

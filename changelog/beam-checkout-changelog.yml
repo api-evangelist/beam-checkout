@@ -1,0 +1,47 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.beamcheckout.com/changelog
+scheme: semver
+current_version: 1.21.0
+note: >-
+  Beam publishes a semver API changelog. Entries below are captured from the
+  live changelog; the page does not attach calendar dates to each release.
+entries:
+  - version: 1.21.0
+    breaking: false
+    highlights: >-
+      Added merchant-initiated and customer-initiated transaction support with
+      new card response fields iso8583ResponseCode, merchantAdviceCode, and
+      networkTransactionId; extended initiatorType and networkTransactionId to
+      CARD and CARD_TOKEN payment methods.
+  - version: 1.20.0
+    breaking: false
+    highlights: Introduced cancelUrl support in payment links.
+  - version: 1.19.0
+    breaking: true
+    highlights: >-
+      Removed BANGKOK_BANK_APP and KRUNGSRI_APP from the request payment method
+      type enum (no longer supported).
+  - version: 1.18.0
+    breaking: false
+    highlights: >-
+      Added webhook event types charge.failed, bolt_intent.canceled,
+      bolt_intent.expired, bolt_intent.paid, refund.succeeded, refund.failed,
+      and transaction.created.
+  - version: 1.17.0
+    breaking: false
+    highlights: >-
+      Updated expiresAt description in QRPromptPayRequest; added Bolt Intent
+      statuses PAID, VOIDED, and REFUNDED.
+  - version: 1.16.0
+    breaking: false
+    highlights: >-
+      Added GET /api/v1/bolt-intents/{boltIntentId} with latestChargeId,
+      latestChargeStatus, latestChargeFailureCode, and result fields.
+  - version: 1.15.0
+    breaking: true
+    highlights: >-
+      Added SPAY_LATER payment method type; removed KRUNGTHAI_NEXT from the enum.
+  - version: 1.14.0
+    breaking: false
+    highlights: Added ALIPAY_PLUS payment method support and Bolt Deep Link mode.

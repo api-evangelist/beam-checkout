@@ -1,0 +1,81 @@
+# Beam API Docs
+
+> Everything you need to integrate payments with Beam: guides, API references, and examples for checkout, cards, Bolt in-person payments, and webhooks. Beam is a payments platform for businesses operating in Thailand.
+
+## Get Started
+
+- [Welcome to Beam](https://docs.beamcheckout.com/get-started/introduction.md): Overview of integration options — Payment Links, Charges API, and Beam Bolt.
+- [Quickstart](https://docs.beamcheckout.com/get-started/quickstart.md): Fastest path to a first successful API call.
+- [API Specifications](https://docs.beamcheckout.com/get-started/api-specifications.md): Where to find the OpenAPI spec and how it's versioned.
+- [Authentication](https://docs.beamcheckout.com/get-started/authentication.md): Basic Auth with merchantId/apiKey, `Authorization: Basic base64(merchantId:apiKey)`.
+- [Beam's Code Conventions](https://docs.beamcheckout.com/get-started/convention.md): Amounts (smallest currency unit), timestamps (ISO 8601), naming.
+- [Request Idempotency](https://docs.beamcheckout.com/get-started/idempotency-request.md): Safely retrying requests without double-processing.
+- [Error Handling](https://docs.beamcheckout.com/get-started/error.md): Error response shape and how to handle failures.
+
+## Before You Go Live
+
+- [Playground Environment](https://docs.beamcheckout.com/playground.md): Sandbox environment for testing integrations.
+- [Test Data](https://docs.beamcheckout.com/test-data.md): Test card numbers and other fixtures for the playground.
+- [Postman Collection](https://docs.beamcheckout.com/postman.md): Import Beam's API into Postman.
+- [Go-live Checklist](https://docs.beamcheckout.com/go-live-checklist.md): Steps to confirm before switching to production.
+- [Switching to Production](https://docs.beamcheckout.com/switching-to-production.md): Moving from playground credentials to live credentials.
+
+## Core Resources
+
+- [Payment Links](https://docs.beamcheckout.com/payment-links/payment-links.md): Beam-hosted checkout page — send shoppers a URL, best for redirect-based flows.
+- [Payment Links API](https://docs.beamcheckout.com/payment-links/payment-links-api.md): Create, retrieve, and manage payment links.
+- [Payment Links Integration Guide](https://docs.beamcheckout.com/payment-links/payment-links-integration.md): Step-by-step integration walkthrough.
+- [Charges](https://docs.beamcheckout.com/charges/charges.md): Direct card charges when you control the checkout UI.
+- [Charges API](https://docs.beamcheckout.com/charges/charges-api.md): Create and manage charges.
+- [Card Tokenization](https://docs.beamcheckout.com/charges/card-tokenization.md): Tokenize card data so you never handle raw PANs.
+- [Charges Integration Guide](https://docs.beamcheckout.com/charges/charges-integration.md): Step-by-step integration walkthrough.
+- [Refunds](https://docs.beamcheckout.com/refunds/refunds.md): Refunding charges, full or partial.
+- [Refunds API](https://docs.beamcheckout.com/refunds/refunds-api.md): Create and retrieve refunds.
+- [Transactions](https://docs.beamcheckout.com/transactions/transactions.md): Unified transaction records across payment methods.
+- [Transactions API](https://docs.beamcheckout.com/transactions/transactions-api.md): Query transaction history and status.
+
+## Beam Bolt
+
+- [Overview of Beam Bolt](https://docs.beamcheckout.com/beam-bolt/introduction.md): In-person payments on a Beam Bolt device.
+- [Standalone Mode](https://docs.beamcheckout.com/beam-bolt/standalone-mode.md): Operate a Bolt device on its own, without an app integration.
+- [Pairing Mode](https://docs.beamcheckout.com/beam-bolt/pairing-mode.md): Pair a Bolt device with your app for guided transactions.
+- [Deep Link Mode](https://docs.beamcheckout.com/beam-bolt/deeplink-mode.md): Deep-link from your own app into the Bolt app to trigger payments.
+- [Bolt Intent](https://docs.beamcheckout.com/bolt-intents/bolt-intent.md): Concept guide for Bolt payment intents.
+- [Bolt Intent API](https://docs.beamcheckout.com/bolt-intents/bolt-intent-api.md): Create and manage Bolt intents.
+- [Bolt Connection](https://docs.beamcheckout.com/bolt-connections/bolt-connection.md): Concept guide for pairing an app with a Bolt device.
+- [Bolt Connection API](https://docs.beamcheckout.com/bolt-connections/bolt-connection-api.md): Create and manage Bolt connections.
+
+## Card Payments
+
+- [Authorization and Capture](https://docs.beamcheckout.com/authorization-and-capture/authorization-and-capture.md): Concept guide for separating auth and capture.
+- [Card Authorization API](https://docs.beamcheckout.com/authorization-and-capture/card-authorizations.md): Create a card authorization (hold funds without capturing).
+- [Capture API](https://docs.beamcheckout.com/authorization-and-capture/card-authorizations-capture.md): Capture a previously authorized amount.
+- [Cancel API](https://docs.beamcheckout.com/authorization-and-capture/card-authorizations-cancel.md): Cancel/void an authorization.
+- [Card Authorizations API Integration Guide](https://docs.beamcheckout.com/authorization-and-capture/card-authorization-integration.md): Step-by-step integration walkthrough.
+- [Network Tokenization](https://docs.beamcheckout.com/network-token/intro.md): Using network tokens instead of raw PANs for card payments.
+- [Creating a Charge with Network Token](https://docs.beamcheckout.com/network-token/charge.md): Charges API usage with a network token.
+- [Creating a Card Authorization with Network Token](https://docs.beamcheckout.com/network-token/card-authorization.md): Authorization API usage with a network token.
+- [Recurring Payments](https://docs.beamcheckout.com/cit-mit/overview.md): Overview of CIT/MIT recurring payment concepts.
+- [How Beam Supports Recurring Payments](https://docs.beamcheckout.com/cit-mit/beam.md): How Beam's API models CIT/MIT flows.
+- [Customer-Initiated Transactions (CIT)](https://docs.beamcheckout.com/cit-mit/cit.md): Payments initiated directly by the customer.
+- [Merchant-Initiated Transactions (MIT)](https://docs.beamcheckout.com/cit-mit/mit.md): Payments initiated by the merchant using stored credentials.
+- [3DS Authentication Overview](https://docs.beamcheckout.com/3ds/3ds-overview.md): How 3D Secure fits into card payment flows.
+- [Bypassing 3DS Authentication and CVV requirements](https://docs.beamcheckout.com/3ds/3ds-bypass.md): When and how 3DS/CVV can be skipped.
+- [Providing 3DS Authentication Details](https://docs.beamcheckout.com/3ds/3ds-provide.md): Passing 3DS authentication data in requests.
+- [Network Response Codes](https://docs.beamcheckout.com/response-codes.md): Card network response/decline code reference.
+
+## Webhook Notifications
+
+- [Webhook](https://docs.beamcheckout.com/webhook-overview.md): How Beam sends event notifications to your endpoint.
+- [Webhook Authentication](https://docs.beamcheckout.com/webhook-authentication.md): Verifying webhook signatures with HMAC-SHA256.
+- [Event Types](https://docs.beamcheckout.com/webhook-event-types.md): Full list of webhook event types and payloads.
+
+## Reference
+
+- [API Reference (v1)](https://docs.beamcheckout.com/v1/api): Full interactive OpenAPI reference for all v1 endpoints.
+- [Changelog](https://docs.beamcheckout.com/changelog.md): API and docs changelog.
+- [AI-Friendly Resources](https://docs.beamcheckout.com/ai-friendly-resources.md): How to point AI chatbots, coding tools, and RAG pipelines at this llms.txt file.
+
+## Optional
+
+- [Migrating from V0](https://docs.beamcheckout.com/get-started/migrating-from-v0.md): For integrations still on the deprecated v0 API.

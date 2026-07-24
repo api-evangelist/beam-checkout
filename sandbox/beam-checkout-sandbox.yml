@@ -1,0 +1,62 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.beamcheckout.com/test-data
+docs:
+  test_data: https://docs.beamcheckout.com/test-data
+  playground: https://docs.beamcheckout.com/playground
+  go_live: https://docs.beamcheckout.com/switching-to-production
+environments:
+  playground_base_url: https://playground.api.beamcheckout.com
+  production_base_url: https://api.beamcheckout.com
+  note: Playground and Production API keys are separate and cannot be used interchangeably.
+test_cards:
+  - brand: VISA
+    number: '4111111111111111'
+    cvv: '123'
+    outcome: SUCCEEDED
+  - brand: Mastercard
+    number: '5372074248113841'
+    cvv: '123'
+    outcome: SUCCEEDED
+  - brand: American Express
+    number: '378282246310005'
+    cvv: '1234'
+    outcome: SUCCEEDED
+  - brand: VISA
+    number: '4943129900084541'
+    cvv: '123'
+    outcome: FAILED
+    reason: INSUFFICIENT_FUNDS
+  - brand: VISA
+    number: '4000007640000003'
+    cvv: '123'
+    outcome: SUCCEEDED
+    note: charge succeeds but refunds are blocked
+  - brand: VISA
+    number: '4000000000005126'
+    cvv: '123'
+    outcome: SUCCEEDED
+    note: charge succeeds but refund operations fail
+  - brand: VISA
+    number: '4389783280144506'
+    cvv: '123'
+    outcome: PENDING
+    note: forces the charge page
+  - brand: VISA
+    number: '4953261730509988'
+    cvv: '123'
+    outcome: PENDING
+    note: forces the OTP page
+installment_test_cards:
+  - issuer: KBANK
+    number: '4417704002802961'
+    outcome: SUCCEEDED
+  - issuer: KTC
+    number: '4391370000000006'
+    outcome: PENDING
+otp:
+  success_value: '123456'
+  note: Any value other than 123456 triggers OTP failure.
+rules:
+  - Card expiry dates must not be earlier than the current date.
+postman_collection: postman/beam-checkout-playground.postman_collection.json
