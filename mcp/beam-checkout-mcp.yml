@@ -2,98 +2,102 @@ generated: '2026-07-18'
 method: derived
 status: candidate
 source: postman/beam-checkout-playground.postman_collection.json
-note: >-
-  No official Beam MCP server was found. This is a candidate tool list derived
-  from Beam's first-party Playground Postman collection (real v1 endpoints).
-  Beam has no downloadable OpenAPI file published; operations are grounded in the
-  Postman collection request definitions.
+note: No official Beam MCP server was found. This is a candidate tool list derived from Beam's first-party
+  Playground Postman collection (real v1 endpoints). Beam has no downloadable OpenAPI file published;
+  operations are grounded in the Postman collection request definitions.
 server:
   name: beam-checkout
   transport: http
   base_url: https://api.beamcheckout.com/api/v1/
   auth: HTTP Basic (merchantId:apiKey)
 tools:
-  - name: create_payment_link
-    description: Create a payment link
-    method: POST
-    path: /api/v1/payment-links
-  - name: get_payment_link
-    description: Retrieve a payment link by ID
-    method: GET
-    path: /api/v1/payment-links/{paymentLinkId}
-  - name: disable_payment_link
-    description: Disable a payment link by ID
-    method: PATCH
-    path: /api/v1/payment-links/{paymentLinkId}/disable
-  - name: list_charges
-    description: List charges
-    method: GET
-    path: /api/v1/charges
-  - name: create_charge
-    description: Create a charge (e.g. QR PromptPay, card)
-    method: POST
-    path: /api/v1/charges
-  - name: get_charge
-    description: Get a charge by ID
-    method: GET
-    path: /api/v1/charges/{chargeId}
-  - name: create_refund
-    description: Create a refund
-    method: POST
-    path: /api/v1/refunds
-  - name: get_refund
-    description: Get a refund by ID
-    method: GET
-    path: /api/v1/refunds/{refundId}
-  - name: list_transactions
-    description: List transactions
-    method: GET
-    path: /api/v1/transactions
-  - name: get_transaction
-    description: Get a transaction by ID
-    method: GET
-    path: /api/v1/transactions/{transactionId}
-  - name: list_card_authorizations
-    description: List card authorizations
-    method: GET
-    path: /api/v1/card-authorizations
-  - name: create_card_authorization
-    description: Create a card authorization (hold funds)
-    method: POST
-    path: /api/v1/card-authorizations
-  - name: get_card_authorization
-    description: Get a card authorization by ID
-    method: GET
-    path: /api/v1/card-authorizations/{cardAuthorizationId}
-  - name: cancel_card_authorization
-    description: Cancel/void a card authorization
-    method: POST
-    path: /api/v1/card-authorizations/{cardAuthorizationId}/cancel
-  - name: capture_card_authorization
-    description: Capture a previously authorized amount
-    method: POST
-    path: /api/v1/card-authorizations/{cardAuthorizationId}/charges
-  - name: list_authorization_charges
-    description: List charges under a card authorization
-    method: GET
-    path: /api/v1/card-authorizations/{cardAuthorizationId}/charges
-  - name: create_bolt_connection
-    description: Create a Bolt connection
-    method: POST
-    path: /api/v1/bolt-connections
-  - name: get_bolt_connection
-    description: Get a Bolt connection by ID
-    method: GET
-    path: /api/v1/bolt-connections/{boltConnectionId}
-  - name: delete_bolt_connection
-    description: Delete a Bolt connection by ID
-    method: DELETE
-    path: /api/v1/bolt-connections/{boltConnectionId}
-  - name: create_bolt_intent
-    description: Create a Bolt intent on a Bolt connection
-    method: POST
-    path: /api/v1/bolt-intents
-  - name: cancel_bolt_intent
-    description: Cancel a Bolt intent by ID
-    method: PATCH
-    path: /api/v1/bolt-intents/{boltIntentId}/cancel
+- name: create_payment_link
+  description: Create a payment link
+  method: POST
+  path: /api/v1/payment-links
+- name: get_payment_link
+  description: Retrieve a payment link by ID
+  method: GET
+  path: /api/v1/payment-links/{paymentLinkId}
+- name: disable_payment_link
+  description: Disable a payment link by ID
+  method: PATCH
+  path: /api/v1/payment-links/{paymentLinkId}/disable
+- name: list_charges
+  description: List charges
+  method: GET
+  path: /api/v1/charges
+- name: create_charge
+  description: Create a charge (e.g. QR PromptPay, card)
+  method: POST
+  path: /api/v1/charges
+- name: get_charge
+  description: Get a charge by ID
+  method: GET
+  path: /api/v1/charges/{chargeId}
+- name: create_refund
+  description: Create a refund
+  method: POST
+  path: /api/v1/refunds
+- name: get_refund
+  description: Get a refund by ID
+  method: GET
+  path: /api/v1/refunds/{refundId}
+- name: list_transactions
+  description: List transactions
+  method: GET
+  path: /api/v1/transactions
+- name: get_transaction
+  description: Get a transaction by ID
+  method: GET
+  path: /api/v1/transactions/{transactionId}
+- name: list_card_authorizations
+  description: List card authorizations
+  method: GET
+  path: /api/v1/card-authorizations
+- name: create_card_authorization
+  description: Create a card authorization (hold funds)
+  method: POST
+  path: /api/v1/card-authorizations
+- name: get_card_authorization
+  description: Get a card authorization by ID
+  method: GET
+  path: /api/v1/card-authorizations/{cardAuthorizationId}
+- name: cancel_card_authorization
+  description: Cancel/void a card authorization
+  method: POST
+  path: /api/v1/card-authorizations/{cardAuthorizationId}/cancel
+- name: capture_card_authorization
+  description: Capture a previously authorized amount
+  method: POST
+  path: /api/v1/card-authorizations/{cardAuthorizationId}/charges
+- name: list_authorization_charges
+  description: List charges under a card authorization
+  method: GET
+  path: /api/v1/card-authorizations/{cardAuthorizationId}/charges
+- name: create_bolt_connection
+  description: Create a Bolt connection
+  method: POST
+  path: /api/v1/bolt-connections
+- name: get_bolt_connection
+  description: Get a Bolt connection by ID
+  method: GET
+  path: /api/v1/bolt-connections/{boltConnectionId}
+- name: delete_bolt_connection
+  description: Delete a Bolt connection by ID
+  method: DELETE
+  path: /api/v1/bolt-connections/{boltConnectionId}
+- name: create_bolt_intent
+  description: Create a Bolt intent on a Bolt connection
+  method: POST
+  path: /api/v1/bolt-intents
+- name: cancel_bolt_intent
+  description: Cancel a Bolt intent by ID
+  method: PATCH
+  path: /api/v1/bolt-intents/{boltIntentId}/cancel
+deployment:
+  mode: none
+  verified: derived
+  tools: 21
+  checked: '2026-08-12'
+  source: catalog MCP census
