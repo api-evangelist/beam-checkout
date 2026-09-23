@@ -1,15 +1,16 @@
 generated: '2026-07-18'
 method: searched
 source: live probes of /.well-known/ across Beam hosts
-note: >-
-  No /.well-known/ discovery documents are published on any Beam host. All
-  probed paths returned 404. Absence is valid recorded data.
+note: No /.well-known/ discovery documents are published on any Beam host. All probed paths returned 404.
+  Absence is valid recorded data.
 hosts_probed:
-  - https://api.beamcheckout.com
-  - https://playground.api.beamcheckout.com
-  - https://www.beamcheckout.com
-  - https://docs.beamcheckout.com
-documents:
+- https://api.beamcheckout.com
+- https://playground.api.beamcheckout.com
+- https://www.beamcheckout.com
+- https://docs.beamcheckout.com
+hosts:
+- host: ''
+  documents:
   - path: /.well-known/security.txt
     status: 404
   - path: /.well-known/openid-configuration
@@ -20,3 +21,8 @@ documents:
     status: 404
   - path: /.well-known/ai-plugin.json
     status: 404
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
