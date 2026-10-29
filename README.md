@@ -64,6 +64,113 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Beam Checkout is a company surfaced as a portfolio company of partech and added to the API Evangelist network as a stub for enrichment. Sector: Financial Services. This profile is a lead awaiting the enrichment pipeline.
+Beam is a Thailand-focused payments platform that lets businesses accept payments across in-person and online channels. Its products include Beam Checkout (online payments for social media, websites, and apps via hosted payment links and a Charges API), Beam Bolt (an in-person payment device), and Beam Bridge (embedded payments for partner platforms). Beam supports cards, e-wallets, QR PromptPay, installments, and Alipay+, with card authorization/capture, refunds, tokenization, 3DS, and CIT/MIT recurring flows. The v1 REST API uses HTTP Basic auth (merchantId:apiKey), idempotency keys, HMAC-signed webhooks, and a playground sandbox. Beam states it is PCI DSS compliant and compliant with Bank of Thailand regulations. Backed by Peak XV, Partech, and SeaX Ventures.
 
-Backed by: partech — https://www.beamcheckout.com/
+**Areas:** Company · Financial Services · Payments · Checkout · Card Payments · Webhook · Thailand · Fintech
+
+## Beam Checkout on APIs.io
+
+Everything profiled for Beam Checkout is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/beam-checkout/](https://apis.io/providers/beam-checkout/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Beam API v1](https://apis.io/apis/beam-checkout/beam-api-v1/) — Beam's v1 REST payments API — payment links, charges, refunds, transactions, card authorizations (auth/capture/cancel), network tokenization, and Beam Bolt…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Beam Checkout Webhooks](https://apis.io/asyncapis/beam-checkout/beam-checkout-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [beam-checkout](https://apis.io/servers/beam-checkout/beam-checkout/)
+
+#### Collections (1)
+
+Postman and Open Collection request collections.
+
+- [[For merchant test] Playground (SANDBOX) version 1.14.0](https://apis.io/collections/beam-checkout/postman-beam-checkout-playground/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Beam Checkout Authentication](https://apis.io/security/beam-checkout/beam-checkout-authentication/)
+- [Beam Checkout Domain Security](https://apis.io/security/beam-checkout/beam-checkout-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.beamcheckout.com/)
+- [Documentation](https://docs.beamcheckout.com/)
+- [Getting started](https://docs.beamcheckout.com/get-started/quickstart)
+- [API reference](https://docs.beamcheckout.com/v1/api)
+- [Pricing](https://www.beamcheckout.com/pricing)
+- [Sign up](https://www.beamcheckout.com/getstarted)
+- [Support](https://guides.beamcheckout.com/hc/en)
+- [Terms of service](https://www.beamcheckout.com/tncs)
+- [Privacy policy](https://www.beamcheckout.com/privacy)
+- [Status](https://status.beamcheckout.com)
+
+## API Evangelist rating
+
+**Kin Score 51.1** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 39.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 39.5 |
+| Developer ergonomics | 66.2 |
+| Access clarity | 52.6 |
+
+**Agent readiness 25.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | documented (partial credit) |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 39.3** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/beam-checkout/](https://apis.io/providers/beam-checkout/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Beam Checkout: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/beam-checkout/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
